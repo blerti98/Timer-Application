@@ -41,15 +41,13 @@ public class TimeController extends JPanel
      painting_delay = 1000;}
      catch(StringIndexOutOfBoundsException e){JOptionPane.showMessageDialog(null, "ERROR: Invalid input. \nUser pressed Ok."); writer.closeFrame();}
      catch(NullPointerException e){JOptionPane.showMessageDialog(null, "ERROR: Invalid input. \nUser pressed Cancel."); writer.closeFrame();}
-     catch(NumberFormatException e){JOptionPane.showMessageDialog(null, "ERROR: Invalid input. \nUser pressed Ok."); writer.closeFrame();}
-     
-     boolean processing = true; 
-      while ( processing )
+     catch(NumberFormatException e){JOptionPane.showMessageDialog(null, "ERROR: Invalid input. \nUser pressed Ok."); writer.closeFrame();}     
+      while ( true )
       {  
          delay(painting_delay);
+         if(writer.pl() != 'T'){break;}
          if(c== 'C'){time_writer.upNumb(model.countdown(),model.renew(),model.ove());}
          if(c=='S'){time_writer.upNumb2(model.stop(),model.counting());}
-         if(writer.pl() != 'T'){processing = false;}
          writer.repaint(); 
       }
    }
