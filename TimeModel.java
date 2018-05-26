@@ -19,13 +19,12 @@ public class TimeModel
   { 
     if(countdown){
        if(inti_s==0 && inti_m == 0 && inti_h != 0){
-       if(inti_h != 0 && inti_s==0  && inti_m==0 ){inti_m = inti_m + 60;}
+       inti_m = inti_m + 60;
        inti_h--;}
-       if(inti_h != 0 && inti_s==0  && inti_m==0 ){inti_m = inti_m + 60;}
        if((inti_m != 0 || inti_h!= 0) && inti_s==0){
-       if(inti_s==0 && inti_m!= 0){inti_m--;}
+       inti_m--;
        inti_s = inti_s + 60;}
-       if(inti_s>0){inti_s--;}    
+       if(inti_s>0){inti_s--;}   
        int minutes_angle = -inti_m*6;
        int hours_angle = -inti_h*30;
        int seconds_angle = -inti_s*6;
